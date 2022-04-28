@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:zupay_ecom/bottom_nav.dart';
 import 'package:zupay_ecom/provider/cart.dart';
 import 'package:zupay_ecom/provider/products.dart';
-import 'package:zupay_ecom/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

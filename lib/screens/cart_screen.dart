@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:zupay_ecom/provider/cart.dart';
-import 'package:zupay_ecom/provider/products.dart';
 import 'package:provider/provider.dart';
 
 class CartScreen extends StatefulWidget {
@@ -16,14 +14,8 @@ class CartScreen extends StatefulWidget {
 
 class _CartScreenState extends State<CartScreen> {
   @override
-  void initState() {
-    final cartProvider = Provider.of<CartProvider>(context, listen: false);
-
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final cartProvider = Provider.of<CartProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 60,
@@ -160,9 +152,15 @@ class _CartScreenState extends State<CartScreen> {
                                         ),
                                         Row(
                                           children: [
-                                            const Icon(
-                                              LineIcons.plusSquare,
-                                              size: 25,
+                                            GestureDetector(
+                                              onTap: () {
+                                                cartProvider.removeFromCart(
+                                                    instance.carts[ind]);
+                                              },
+                                              child: const Icon(
+                                                LineIcons.minusSquare,
+                                                size: 25,
+                                              ),
                                             ),
                                             const SizedBox(width: 5),
                                             Text(
@@ -174,7 +172,7 @@ class _CartScreenState extends State<CartScreen> {
                                             ),
                                             const SizedBox(width: 5),
                                             const Icon(
-                                              LineIcons.minusSquare,
+                                              LineIcons.plusSquare,
                                               size: 25,
                                             ),
                                           ],

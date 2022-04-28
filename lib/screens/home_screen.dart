@@ -13,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  ScrollController _scrollController = ScrollController();
+  final _scrollController = ScrollController();
   @override
   void initState() {
     final productProvider =
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: SvgPicture.asset('assets/icons/menu.svg'),
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(10),
+          preferredSize: const Size.fromHeight(10),
           child: Row(
             children: [
               const SizedBox(width: 10),
@@ -96,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fit: BoxFit.fill,
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

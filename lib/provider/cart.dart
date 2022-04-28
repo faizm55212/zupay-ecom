@@ -11,5 +11,6 @@ class CartProvider with ChangeNotifier {
 
   void removeFromCart(Product product) {
     carts.remove(product);
+    notifyListeners();
   }
 }
