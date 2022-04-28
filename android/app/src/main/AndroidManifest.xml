@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zupay_ecom">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="zupay_ecom"
         android:name="${applicationName}"
