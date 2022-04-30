@@ -152,17 +152,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                             fontSize: 17,
                                           ),
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 6, horizontal: 13),
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              Fluttertoast.showToast(
-                                                  msg: "Item Added To Cart",
-                                                  gravity: ToastGravity.BOTTOM);
-                                              cartProvider.addToCart(
-                                                  instance.products[ind]);
-                                            },
+                                        GestureDetector(
+                                          onTap: () {
+                                            Fluttertoast.showToast(
+                                                msg: "Item Added To Cart",
+                                                gravity: ToastGravity.BOTTOM);
+                                            cartProvider.addToCart(
+                                                instance.products[ind]);
+                                          },
+                                          child: Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 6, horizontal: 13),
                                             child: SvgPicture.asset(
                                                 'assets/icons/cart.svg'),
                                           ),
